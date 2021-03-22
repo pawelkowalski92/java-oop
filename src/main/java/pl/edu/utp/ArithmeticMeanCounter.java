@@ -9,15 +9,25 @@ public class ArithmeticMeanCounter {
         int c = 40;
 
         double mean = calculateArithmeticMean(a, b, c);
+        double geoMean = calculateGeometricMean(a, b, c);
         System.out.println(mean);
+        System.out.println(geoMean);
     }
 
-    public static double calculateArithmeticMean(int... factors) {
-        int sum = 0;
+    public static double calculateArithmeticMean(double... factors) {
+        double sum = 0;
         for (int i = 0; i < factors.length; i++) {
             sum += factors[i];
         }
-        return (double) sum / factors.length;
+        return sum / factors.length;
+    }
+
+    public static double calculateGeometricMean(double... factors) {
+        double result = 1;
+        for (double factor : factors) {
+            result *= factor;
+        }
+        return Math.pow(result, (double) 1 / factors.length);
     }
 
 }
