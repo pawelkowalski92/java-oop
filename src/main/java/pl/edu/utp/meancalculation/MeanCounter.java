@@ -8,21 +8,27 @@ public class MeanCounter {
         int b = 30;
         int c = 40;
 
-        ArithmeticMeanAlgorithm meanAlgorithm = new ArithmeticMeanAlgorithm();
+        MeanAlgorithm meanAlgorithm = new ArithmeticMeanAlgorithm();
         meanAlgorithm.add(a);
         meanAlgorithm.add(b);
         meanAlgorithm.add(c);
 
-        double mean = meanAlgorithm.calculateMean();
-        System.out.println(mean);
-
-        GeometricMeanAlgorithm geoMeanAlgorithm = new GeometricMeanAlgorithm();
+        MeanAlgorithm geoMeanAlgorithm = new GeometricMeanAlgorithm();
         geoMeanAlgorithm.add(a);
         geoMeanAlgorithm.add(b);
         geoMeanAlgorithm.add(c);
 
-        double geoMean = geoMeanAlgorithm.calculateMean();
-        System.out.println(geoMean);
+        displayMeans(meanAlgorithm, geoMeanAlgorithm);
+    }
+
+    public static void displayMean(MeanAlgorithm algorithm) {
+        System.out.println(algorithm.calculateMean());
+    }
+
+    public static void displayMeans(MeanAlgorithm... algorithms) {
+        for (MeanAlgorithm algorithm : algorithms) {
+            displayMean(algorithm);
+        }
     }
 
 }
