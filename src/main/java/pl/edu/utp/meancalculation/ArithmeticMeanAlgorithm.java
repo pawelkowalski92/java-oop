@@ -1,10 +1,10 @@
 package pl.edu.utp.meancalculation;
 
-public class ArithmeticMeanAlgorithm {
+public class ArithmeticMeanAlgorithm implements MeanAlgorithm {
 
     // fields
-    int currentSum;
-    int noOfFactors;
+    private double currentSum;
+    private double noOfFactors;
 
     // constructor
     public ArithmeticMeanAlgorithm() {
@@ -13,13 +13,14 @@ public class ArithmeticMeanAlgorithm {
     }
 
     // methods
-    public void add(int a) {
+    public void add(double a) {
         currentSum += a; // currentSum = currentSum + a;
         noOfFactors++; // noOfFactors = noOfFactors + 1;
     }
 
+    @Override
     public double calculateMean() {
-        return (double) currentSum / noOfFactors;
+        return currentSum / noOfFactors;
     }
 
 }

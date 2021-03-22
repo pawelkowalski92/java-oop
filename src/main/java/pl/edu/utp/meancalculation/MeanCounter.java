@@ -12,10 +12,17 @@ public class MeanCounter {
         meanAlgorithm.add(a);
         meanAlgorithm.add(b);
         meanAlgorithm.add(c);
-        meanAlgorithm.add(4);
 
         double mean = meanAlgorithm.calculateMean();
         System.out.println(mean);
+
+        GeometricMeanAlgorithm geoMeanAlgorithm = new GeometricMeanAlgorithm();
+        geoMeanAlgorithm.add(a);
+        geoMeanAlgorithm.add(b);
+        geoMeanAlgorithm.add(c);
+
+        double geoMean = geoMeanAlgorithm.calculateMean();
+        System.out.println(geoMean);
     }
 
 }
