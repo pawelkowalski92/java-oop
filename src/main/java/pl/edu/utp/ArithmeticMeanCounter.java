@@ -8,9 +8,16 @@ public class ArithmeticMeanCounter {
         int b = 30;
         int c = 40;
 
-        int sum = a + b + c;
-        double mean = sum / 3;
+        double mean = calculateArithmeticMean(a, b, c);
         System.out.println(mean);
+    }
+
+    public static double calculateArithmeticMean(int... factors) {
+        int sum = 0;
+        for (int i = 0; i < factors.length; i++) {
+            sum += factors[i];
+        }
+        return (double) sum / factors.length;
     }
 
 }
