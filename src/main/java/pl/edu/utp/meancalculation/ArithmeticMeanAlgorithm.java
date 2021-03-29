@@ -5,15 +5,13 @@ package pl.edu.utp.meancalculation;
 <access_modifier> <extra_keywords> class_name <extends other_class> <implements other_interface, ...> {
 }
  */
-public class ArithmeticMeanAlgorithm implements MeanAlgorithm {
+public class ArithmeticMeanAlgorithm extends CountingMeanAlgorithm {
 
     // fields
     /*
     <access_modifier> <extra_keywords> field_type field_name; - declaration
     <access_modifier> <extra_keywords> field_type field_name = value; - declaration and initialization
      */
-    private double currentSum;
-    private double noOfFactors;
 
     // constructor
     /*
@@ -22,8 +20,7 @@ public class ArithmeticMeanAlgorithm implements MeanAlgorithm {
     }
      */
     public ArithmeticMeanAlgorithm() {
-        currentSum = 0;
-        noOfFactors = 0;
+        super(0);
     }
 
     // methods
@@ -36,13 +33,12 @@ public class ArithmeticMeanAlgorithm implements MeanAlgorithm {
     <arg> - <extra_keywords> arg_type arg_name
      */
     @Override
-    public void add(double a) {
+    protected void doAdd(double a) {
         currentSum += a; // currentSum = currentSum + a;
-        noOfFactors++; // noOfFactors = noOfFactors + 1;
     }
 
     @Override
-    public double calculateMean() {
+    protected double doCalculateMean() {
         return currentSum / noOfFactors;
     }
 

@@ -2,12 +2,15 @@ package pl.edu.utp.meancalculation;
 
 public abstract class CountingMeanAlgorithm implements MeanAlgorithm {
 
-    private double currentSum;
-    private double noOfFactors;
+    // access modifiers
+    // private < <package> < protected < public
+    protected double currentSum;
+    protected double noOfFactors;
 
-    CountingMeanAlgorithm(double currentSum) {
-        currentSum = currentSum;
-        noOfFactors = 0;
+    protected CountingMeanAlgorithm(double currentSum) {
+        // when variable hides a field, use `this`
+        this.currentSum = currentSum;
+        this.noOfFactors = 0;
     }
 
     @Override
@@ -16,7 +19,7 @@ public abstract class CountingMeanAlgorithm implements MeanAlgorithm {
         noOfFactors++;
     }
 
-    abstract void doAdd(double factor);
+    protected abstract void doAdd(double factor);
 
     @Override
     public double calculateMean() {
