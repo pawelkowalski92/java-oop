@@ -5,6 +5,13 @@ public class Parent {
     private String a = "abc";
     protected int b = 10;
 
+    /* since we haven't specified any explicit constructor, compiler adds an default implicit constructor for us
+
+    public Parent() {
+        super();
+    }
+     */
+
     protected int getB() {
         return b;
     }

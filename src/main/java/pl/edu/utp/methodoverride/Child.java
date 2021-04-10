@@ -4,9 +4,13 @@ import java.util.Random;
 
 public class Child extends Parent {
 
-    public int generateRandom() {
-        return new Random().nextInt();
+    /* since we haven't specified any explicit constructor, compiler adds an default implicit constructor for us
+    that works even with subclassing since Parent constructor is still suitable for default declaration
+
+    public Child() {
+        super();
     }
+     */
 
     @Override
     public void displayA() {
@@ -27,6 +31,10 @@ public class Child extends Parent {
     @Override
     public OrnamentBox createBox() {
         return new OrnamentBox(20);
+    }
+
+    public int generateRandom() {
+        return new Random().nextInt();
     }
 
 }
